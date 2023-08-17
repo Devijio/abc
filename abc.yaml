@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /path/to/source/files
+    destination: /path/on/target/instance
+hooks:
+  BeforeInstall:
+    - location: scripts/before-install.sh
+      timeout: 300
+      runas: codedeployuser
+  AfterInstall:
+    - location: scripts/after-install.sh
+      timeout: 300
+      runas: codedeployuser
+  # Other hooks...
